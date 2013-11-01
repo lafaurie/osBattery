@@ -158,6 +158,7 @@
 									"aria-valuenow"));
 					if (App.defaultConfiguration.dataBatteryLevelChange > 0) {
 						App.defaultConfiguration.alarmBatteryLevelChange = true;
+						App.defaultConfiguration.alarmBatteryLevelFired = false;
 					}
 				} else {
 					actualValue = parseInt(document.getElementById(
@@ -165,6 +166,7 @@
 					if (actualValue != App.defaultConfiguration.dataBatteryLevelChange
 							&& actualValue > 0) {
 						App.defaultConfiguration.dataBatteryLevelChange = actualValue;
+						App.defaultConfiguration.alarmBatteryLevelFired = false;
 					}
 				}
 			} else {
@@ -178,6 +180,7 @@
 									"aria-valuenow"));
 					if (App.defaultConfiguration.dataBatteryChargingChange > 0) {
 						App.defaultConfiguration.alarmBatteryChargingChange = true;
+						App.defaultConfiguration.alarmBatteryChargingFired = false;
 					}
 				} else {
 					actualValue = parseInt(document
@@ -186,6 +189,7 @@
 					if (actualValue != App.defaultConfiguration.dataBatteryChargingChange
 							&& actualValue > 0) {
 						App.defaultConfiguration.dataBatteryChargingChange = actualValue;
+						App.defaultConfiguration.alarmBatteryChargingFired = false;
 					}
 				}
 			} else {
@@ -360,12 +364,23 @@
 			if (App.defaultConfiguration.alarmBatteryLevelChange) {
 				var compare = App
 						.compareBatteryStatus(App.defaultConfiguration.dataBatteryLevelChange);
-				if (compare == 0) {
+				var actualLevel = App.actualBatteryLevel();
+				var diference = (App.defaultConfiguration.dataBatteryLevelChange < actualLevel) ? actualLevel
+						- App.defaultConfiguration.dataBatteryLevelChange
+						: App.defaultConfiguration.dataBatteryLevelChange
+								- actualLevel;
+				if (!App.defaultConfiguration.alarmBatteryLevelFired
+						&& (compare == 0 || diference <= 2)) {
 					App.notify("Battery notification!", "The level is: "
 							+ App.defaultConfiguration.dataBatteryLevelChange
 							+ "%", null, function() {
 
 					});
+					App.defaultConfiguration.alarmBatteryLevelFired = true;
+				} else {
+					if (App.defaultConfiguration.alarmBatteryLevelFired) {
+						App.defaultConfiguration.alarmBatteryLevelFired = false;
+					}
 				}
 			}
 
@@ -373,7 +388,12 @@
 					&& App.defaultConfiguration.alarmBatteryChargingChange) {
 				compare = App
 						.compareBatteryStatus(App.defaultConfiguration.dataBatteryChargingChange);
-				if (compare == 0) {
+				var diference = (App.defaultConfiguration.dataBatteryChargingChange < actualLevel) ? actualLevel
+						- App.defaultConfiguration.dataBatteryChargingChange
+						: App.defaultConfiguration.dataBatteryChargingChange
+								- actualLevel;
+				if ((compare == 0 || diference <= 2)
+						&& !App.defaultConfiguration.alarmBatteryChargingFired) {
 					App
 							.notify(
 									"Battery notification!",
@@ -382,6 +402,11 @@
 											+ "%", null, function() {
 
 									});
+					App.defaultConfiguration.alarmBatteryChargingFired = true;
+				} else {
+					if (App.defaultConfiguration.alarmBatteryChargingFired) {
+						App.defaultConfiguration.alarmBatteryChargingFired = false;
+					}
 				}
 			}
 		}
@@ -430,7 +455,7 @@
 				type : "appload"
 			});
 	}, false);
-	
+
 	window.addEventListener("unload", function() {
 		if (App.defaultConfiguration.alarmBatteryLevelChange
 				|| App.defaultConfiguration.alarmBatteryChargingChange)

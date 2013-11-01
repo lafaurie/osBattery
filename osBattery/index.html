@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Basic Page Needs
+  ================================================== -->
+<meta charset="utf-8">
+<title>osBattery</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas
+  ================================================== -->
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+<!-- CSS
+  ================================================== -->
+<link rel="stylesheet" type="text/css" href="/css/style/headers.css" />
+<link rel="stylesheet" type="text/css"
+	href="/css/style_unstable/tabs.css" />
+<link href="/css/icons/styles/action_icons.css" rel="stylesheet"
+	type="text/css">
+<link rel="stylesheet" type="text/css"
+	href="/css/style_unstable/seekbars.css" />
+<link href="/css/style/switches.css" rel="stylesheet" type="text/css">
+<link href="/css/style/buttons.css" rel="stylesheet" type="text/css">
+<link href="/css/style/status.css" rel="stylesheet" type="text/css">
+
+<!-- Util CSS: some extra tricks -->
+<link rel="stylesheet" href="/css/util/util.css">
+<link rel="stylesheet" href="/css/util/fonts.css">
+
+<link rel="stylesheet" href="css/app.css">
+
+</head>
+<body role="application">
+
+
+
+	<!-- Primary Page Layout
+	================================================== -->
+	<section class="skin-dark" role="region">
+		<section class="skin-dark" role="region">
+			<header>
+				<menu type="toolbar">
+					<a href="#"><span class="icon action-icon app-icon">app</span></a>
+				</menu>
+				<h1>osBattery</h1>
+			</header>
+			<ul role="tablist" data-items="3">
+				<li id="panel1" role="tab" aria-selected="true"><a href="#"
+					id="linkpanel1" tab="panel1">General</a>
+					<div role="tabpanel">
+						<br />
+						<div class="battery-container">
+							<svg xmlns:dc="http://purl.org/dc/elements/1.1/"
+								xmlns:cc="http://creativecommons.org/ns#"
+								xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+								xmlns:svg="http://www.w3.org/2000/svg"
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+								xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+								width="81" height="200" id="svg2" version="1.1"
+								inkscape:version="0.48.4 r9939" sodipodi:docname="battery.svg"
+								inkscape:export-filename="/home/jrlafaurie/workspace-components/cfoBattery/img/icon/battery.png"
+								inkscape:export-xdpi="90" inkscape:export-ydpi="90" class="img">
+  <defs id="defs4" />
+  <sodipodi:namedview id="base" pagecolor="#ffffff"
+									bordercolor="#666666" borderopacity="1.0"
+									inkscape:pageopacity="0.0" inkscape:pageshadow="2"
+									inkscape:zoom="2.735" inkscape:cx="-47.345651"
+									inkscape:cy="112.51926" inkscape:document-units="px"
+									inkscape:current-layer="layer1" showgrid="false"
+									inkscape:window-width="1366" inkscape:window-height="721"
+									inkscape:window-x="-2" inkscape:window-y="24"
+									inkscape:window-maximized="1" showguides="true"
+									inkscape:guide-bbox="true" />
+  <metadata id="metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1"
+									transform="translate(0,-852.3622)" style="display:inline">
+    <g id="g2994">
+      <rect
+									style="fill:#e7e7e7;fill-opacity:1;stroke:#e7e7e7;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
+									id="rect3009" width="67.782013" height="194.77107"
+									x="6.6089935" y="856.62512" rx="8.0287457" ry="8.0071526" />
+      <rect
+									style="fill:#222b2d;fill-opacity:1;stroke:#515356;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+									id="rect3011" width="62.424007" height="190.916" x="9.2879963"
+									y="858.55261" rx="7.3940964" ry="7.8486772" />
+      <rect
+									style="fill-opacity:1;stroke:#515356;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+									id="rect3013" width="58.320644" height="185.099" x="11.339678"
+									y="861.46112" rx="6.9080591" ry="7.60953" /><!-- class="battery-good" -->
+      <rect
+									style="fill:#e7e7e7;fill-opacity:1;stroke:#e7e7e7;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+									id="rect3015" width="21.930002" height="4.2189994" x="29.535"
+									y="852.62787" rx="2.5975981" ry="0.8363899" />
+    </g>
+  </g>
+</svg>
+							<div style="margin-left: 6em; margin-top: 2em;">
+								<span id="battery-info" class="battery-status"></span>
+							</div>
+
+							<div style="clear: left;" id="legend">
+								<div>
+									<div class="titulo">legend</div>
+									<div class="legend-row">
+										<div class="battery-legend" legend="good"></div>
+										<div class="battery-legend" legend="less"></div>
+										<div class="battery-legend" legend="bad"></div>
+									</div>
+									<div class="legend-row">
+										<div class="legend-cell">good</div>
+										<div class="legend-cell">less</div>
+										<div class="legend-cell">bad</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div></li>
+				<li id="panel2" role="tab"><a href="#" id="linkpanel2" tab="panel2">Tips</a>
+					<div role="tabpanel">
+						<section data-type="list">
+
+							<div class="tabla2">
+								<div class="cabtab2" id="tip1" continer="continertip1">Charge
+									the battery whenever you can</div>
+								<div show-tip="" id="continertip1">
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										Contrary to what many think, leave download the Li-Ion
+										batteries completely, ie 0%, has a negative effect on them.
+									</div>
+
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										Fully recharge necessitates the use of a larger number of
+										charging cycles.
+									</div>
+
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										It would be advisable to let them offload up to 40% or 50%
+										capacity and recharged again.
+									</div>
+
+								</div>
+							</div>
+
+							<div class="tabla2">
+								<div class="cabtab2" id="tip2" continer="continertip2">Do
+									not charge the batteries to full capacity</div>
+								<div show-tip="" id="continertip2">
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										Incredibly, it is recommended to charge the batteries in our
+										devices up to 100% of its capacity, in fact it is advisable to
+										load up to 80% or 90% of its total capacity.
+									</div>
+
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										In case you can not avoid loading up to 100%, ideally
+										disconnect the charger when the limit is reached.
+									</div>
+
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										To stay connected more than necessary occurs in the battery a
+										"mini-cycles" end load decreasing its life.
+									</div>
+								</div>
+							</div>
+
+							<div class="tabla2">
+								<div class="cabtab2" id="tip3" continer="continertip3">Download
+									full battery once a month</div>
+								<div show-tip="" id="continertip3">
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										While it is a contradiction to the first point, there is a
+										reason for this. The lithium ion batteries are also known to
+										be intelligent, this "intelligence" is the device that allows
+										us know about the approximate charging time remaining for the
+										battery.
+									</div>
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										As a result of various processes of loading and unloading,
+										these values are no longer accurate, to recalibrate the
+										battery manufacturers recommend performing a full download.
+									</div>
+								</div>
+							</div>
+
+							<div class="tabla2">
+								<div class="cabtab2" id="tip4" continer="continertip4">Use
+									the correct charger for your battery type</div>
+								<div show-tip="" id="continertip4">
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										Charging batteries using any charger helps reduce not only
+										their life, but can also be dangerous.
+									</div>
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										A battery that connects to an inappropriate charger may
+										overheat and even catch fire.
+									</div>
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										Try to always use the charger supplied with the battery itself
+										or device that uses it.
+									</div>
+
+								</div>
+							</div>
+
+							<div class="tabla2">
+								<div class="cabtab2" id="tip5" continer="continertip5">Do
+									not worry about the first charge</div>
+								<div show-tip="" id="continertip5">
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										Many times when buying a new device some vendors recommend
+										that you fully charge the battery before first use, something
+										for nothing, is necessary.
+									</div>
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										Operating a Li-Ion battery on the first charge is equal to any
+										of the following.
+									</div>
+								</div>
+							</div>
+
+							<div class="tabla2">
+								<div class="cabtab2" id="tip6" continer="continertip6">Store
+									batteries in a cool place</div>
+								<div show-tip="" id="continertip6">
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										In case you need to store a battery for a long time, it is
+										best to leave it loaded up to 40% of its total capacity and
+										put it to a temperature close to 15 ° C.
+									</div>
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										The heat can damage the battery completely if left stored for
+										long.
+									</div>
+									<div class='blog_nota'>
+										<div class='titulo'>info</div>
+										A lithium ion battery stored properly can retain up to 80% of
+										their charge and work perfectly even after being unused for
+										six months.
+									</div>
+
+								</div>
+							</div>
+							<br /> <br /> <br /> <br />
+						</section>
+					</div></li>
+				<li id="panel3" role="tab"><a href="#" id="linkpanel3"
+					tab="panel3">Settings</a>
+					<div role="tabpanel">
+						<section role="region" style="width: 90%;">
+							<div
+								style="display: inline-table; margin-top: 1em; margin-left: 1.5em;">
+
+								<div class="titulo">Notify me when</div>
+								<div class="legend-row">
+									<div class="legend-cell">The battery level is:</div>
+									<div class="legend-cell">
+										<label class="pack-checkbox"> <input type="checkbox"
+											type-bar="batterylevel" id="checkbatterylevel"> <span
+											class="battery-status"></span>
+										</label>
+									</div>
+								</div>
+								<div class="legend-row" battery-level="false"
+									type-level="battery" id="batterylevel">
+									<div class="legend-cell">
+										<div role="slider" aria-valuemin="0" aria-valuenow="0"
+											aria-valuemax="100" aria-valuetext="slider description"
+											text-id="batteryleveltext" id="ariabattery">
+											<div>
+												<progress value="0" max="100"></progress>
+												<button>handler</button>
+											</div>
+										</div>
+									</div>
+									<ul class="spinner">
+										<li><input type="button" value="&#9650;"
+											aria-id="ariabattery" spinner-type="more" id="spinner1" /></li>
+										<li><input type="button" value="&#9660;"
+											aria-id="ariabattery" spinner-type="less" id="spinner2" /></li>
+									</ul>
+									<div
+										style="display: table-cell; color: #ffffff; font-size: small;"
+										id="batteryleveltext"></div>
+								</div>
+
+								<br />
+								<div class="legend-row">
+									<div class="legend-cell">The charge is:</div>
+									<div class="legend-cell">
+										<label class="pack-checkbox"> <input type="checkbox"
+											type-bar="chargelevel" id="checkchargelevel"> <span
+											class="battery-status"></span>
+										</label>
+									</div>
+								</div>
+								<div class="legend-row" charge-level="false" type-level="charge"
+									id="chargelevel">
+									<div class="legend-cell">
+										<div role="slider" aria-valuemin="0" aria-valuenow="0"
+											aria-valuemax="100" aria-valuetext="slider description"
+											text-id="chargeleveltext" id="ariacharge">
+											<div>
+												<progress value="0" max="100"></progress>
+												<button>handler</button>
+											</div>
+										</div>
+									</div>
+									<ul class="spinner">
+										<li><input type="button" value="&#9650;"
+											aria-id="ariacharge" spinner-type="more" id="spinner3" /></li>
+										<li><input type="button" value="&#9660;"
+											aria-id="ariacharge" spinner-type="less" id="spinner4" /></li>
+									</ul>
+									<div
+										style="display: table-cell; color: #ffffff; font-size: small;"
+										id="chargeleveltext"></div>
+								</div>
+
+								<br />
+								<div class="legend-row">
+									<a class="recommend" role="button" href="#"
+										style="margin-left: 6.5rem; width: 70%; -moz-border-radius: 1em; -webkit-border-radius: 15px; border-radius: 15px; color: #ffffff; text-transform: uppercase; font-size: small;"
+										id="buttonsettings">Save settings</a>
+								</div>
+							</div>
+
+						</section>
+					</div></li>
+			</ul>
+		</section>
+	</section>
+
+	<!-- container -->
+
+
+	<!-- End Document
+================================================== -->
+	<script type="text/javascript" src="js/batteryBD.js"></script>
+	<script type="text/javascript" src="js/battery.js"></script>
+	<script type="text/javascript" defer src="js/seekbars.js"></script>
+</body>
+</html>

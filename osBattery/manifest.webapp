@@ -1,0 +1,41 @@
+{
+    "name": "osBattery",
+    "version" : "1.0.0",
+    "description": "This app allows you to check the battery status!",
+    "launch_path": "/index.html",
+    "permissions": {
+      	"alarms": {
+			"description": "Required for keeping the app checking the battery status"
+		},
+      	"desktop-notification": {
+      	    "description": "Required to notify the state of the battery!"
+      	}
+    },
+    "developer": {
+        "name": "Jose Rolando Lafaurie Olivares",
+        "url": "https://www.facebook.com/lafaurieolivares"
+    },
+    "messages": [
+		{ "alarm": "/index.html" }
+	],
+	"locales":{
+		"en": {
+      		"name": "osBattery",
+      		"description": "This app allows you to check the battery status!"
+    	},
+    	"es": {
+    	  	"name": "osBattery",
+      		"description": "Esta aplicación le permite comprobar el estado de la batería!"
+    	}
+	},
+    "icons": {
+        "32": "/img/icon/osbattery32.png",
+        "60": "/img/icon/osbattery60.png",
+        "90": "/img/icon/osbattery90.png",
+        "120": "/img/icon/osbattery120.png",
+        "128": "/img/icon/osbattery128.png",
+        "256": "/img/icon/osbattery256.png"
+    },
+    "orientation": ["portrait"],
+    "default_locale": "en"
+}
